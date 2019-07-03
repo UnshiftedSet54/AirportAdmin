@@ -1,0 +1,27 @@
+.Button {
+    width: 120px;
+    height: 50px;
+    outline: none;
+    border-radius: 10px;
+    color: black;
+    background-color: #2993f7;
+    border: 2px solid transparent;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.Button:hover {
+    border: 2px solid #1212a0;
+    
+}
+
+.Button:active {
+    border: 5px solid #1212a0;
+    border-style: outset;
+}
+
+.Button:disabled {
+   background-color: #ccc;
+   cursor: not-allowed; 
+}

@@ -1,0 +1,25 @@
+.UserCard {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+}
+
+.Image {
+    background-color: red;
+    border-radius: 50px;
+    width: 100px;
+    max-width: 60%;
+    height: 100%;
+}
+
+@media (min-width: 500px ) {
+    .UserCard {
+        height: 150px;
+    }
+
+    .Image {
+        width: 140px;
+        height: 100%;
+        border-radius: 100%;
+    }
+}

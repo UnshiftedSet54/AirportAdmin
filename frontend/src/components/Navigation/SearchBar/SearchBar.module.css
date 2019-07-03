@@ -1,0 +1,15 @@
+.SearchBar {
+    width: 100px;
+    height: 80%;
+    margin: 5px 0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    outline: none;
+    text-indent: 1em;
+    transition: 0.3s ease-out;
+}
+
+.SearchBar:focus {
+    width: 200px;
+}
+

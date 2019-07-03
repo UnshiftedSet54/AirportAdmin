@@ -1,0 +1,52 @@
+.NavigationItemRow {
+    margin: 0;
+    display: flex;
+    height: 100%;
+    width: auto;
+    align-items: center;
+}
+
+.NavigationItemRow a {
+    color: black;
+    text-decoration: none;
+    height: 100%;
+    padding: 16px 10px;
+    border-bottom: 4px solid transparent;
+}
+
+.NavigationItemRow a:hover,
+.NavigationItemRow a:active,
+.NavigationItemRow a.active {
+    background-color: #66ccf5;
+    border-bottom: 4px solid #1d8841;
+    color: black;
+}
+
+.NavigationItemColumn {
+    border-bottom: 4px solid transparent;
+    margin: auto;
+    box-sizing: border-box;
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+.NavigationItemColumn a {
+    border-bottom: 4px solid transparent;
+    color: #66ccf5;
+    text-decoration: none;
+    margin: auto;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+
+.NavigationItemColumn a:hover,
+.NavigationItemColumn a:active,
+.NavigationItemColumn a.active {
+    color: #413eeb;
+    border-bottom: 4px solid #1d8841;
+}
+
+

@@ -1,0 +1,17 @@
+.Form {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.Register {
+    flex-direction: row;
+    display: block;
+    margin: auto;
+}
+
+.Login {
+    display: block;
+    align-content: center;
+    align-items: center;
+    margin: auto;
+}

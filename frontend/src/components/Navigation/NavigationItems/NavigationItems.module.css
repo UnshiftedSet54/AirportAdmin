@@ -1,0 +1,22 @@
+.NavigationItemsRow {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    height: 100%;
+}
+
+.NavigationItemsColumn {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    
+    margin: auto;
+    height: 100%;
+    width: 80%;
+}
+

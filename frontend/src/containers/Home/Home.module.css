@@ -1,0 +1,42 @@
+
+.Proms {
+    width: 100%;
+    height: 1300px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    align-content: space-between;
+    padding: 16px 16px;
+    border: 5px solid #ccf371;
+    background-color: #ccf371;
+    box-sizing: border-box;
+}
+
+.Proms a {
+    height: 300px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: auto;
+    border: 2px solid #88f7f7;
+}
+
+.Proms img {
+    height: 100%;
+    width: 100%;
+}
+
+@media (min-width: 500px) {
+    
+    .Proms {
+        margin: 30px auto;
+        width: 90%;
+        height: 200px;
+        flex-flow: row;
+        border-radius: 20px;       
+    }
+
+    .Proms a {
+        height: 100%;
+        width: 20%;
+    }
+}
