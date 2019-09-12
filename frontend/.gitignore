@@ -1,0 +1,5 @@
+/node_modules
+
+/src/components/.DS_Store
+/src/containers/.DS_Store
+/src/components/Navigation/.DS_Store

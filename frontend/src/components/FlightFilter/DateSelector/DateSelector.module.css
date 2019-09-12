@@ -1,0 +1,47 @@
+.DateSelector {
+    width: 100px;
+    height: 50px;
+}
+
+.DateSelectorButton {
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: 1px solid #9ba2a6;
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.Title {
+    position: absolute;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0;
+    text-shadow: none; 
+    font-size: 12px;
+    top: 5px;
+}
+
+.Date {
+    position: absolute;
+    font-weight: bold;
+    color: #37454d;
+    bottom: 5px;
+}
+
+.Calendaric {
+    position: absolute;
+    right: 10px;
+}
+@media (min-width: 500px) {
+    .DateSelector {
+        width: 200px;
+        height: 50px;
+    }
+}

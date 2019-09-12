@@ -1,82 +1,149 @@
 .Slider {
     overflow: hidden;
     margin: auto;
-    margin-top: 50px;
     width: 100%;
-    height: 250px;
-    box-sizing: border-box;
+    height: 45vh;
+}
+
+a:hover .Image{
+    filter:blur(1px);
+    -webkit-filter:blur(1px);
+    -webkit-filter: blur(1px);
+}
+
+.Title{
+    position: absolute;
+    width: 100%;
+    height: 45vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.301);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    z-index: 50;
+    text-shadow: 1px 1px 1px black;
+    transition: background-color 2s ease;
+}
+
+.Title:hover{
+    background-color: rgba(0, 0, 0, 0.507);
 }
 
 .Image {
     z-index: 50;
     width: 100%;
-    height: 250px;
+    height: 45vh;
+    -o-object-fit: cover;
+    object-fit: cover;
+    transition: filter 0.2s ease-in;
+    -webkit-transition: filter 0.2s ease-in;
+    -moz-transition: filter 0.2s ease-in;
+    -ms-transition: filter 0.2s ease-in;
+    -o-transition: filter 0.2s ease-in;
 }
 
 .Selector {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    position: relative;
-    top: -60px;
-    height: 50px;
+    height: 30px;
     width: 100%;
-    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
     padding-bottom: 10px;
-    z-index: 51;
+    position: absolute;
+    z-index: 200;
+    -webkit-transform: translateY(-150%);
+    transform: translateY(-150%);
 }
 
 .PrevBtn {
-    text-align: center;
-    position: relative;
-    float: left;
-    font-size: 60px;
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
-    user-select: none;
-    top: -240px;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+   -webkit-box-pack: end;
+       -ms-flex-pack: end;
+           justify-content: flex-end;
+   font-size: 3rem;
+   cursor: pointer;
+   top: 25%;
+   padding-left: 10px;
 }
 
 .nextBtn {
-    display: inline-block;
-    text-align: center;
-    position: relative;
-    left: 135px;
-    font-size: 60px;
-    height: 50px;
-    width: 50px;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 3rem;
     cursor: pointer;
-    user-select: none;
-    top: -240px;
+    padding-right: 10px;
 }
 
-.nextBtn:hover,
-.PrevBtn:hover {
-    color: lawngreen;
-    transition-duration: .3s;
+.PrevBtn, .nextBtn {
+    z-index: 200;
+    position: absolute;
+    top: 25%;
+    color: white;
 }
 
-@media (min-width: 500px) {
-    .Slider {
-        border: 3px solid #88f7f7;
-        border-radius: 30px;
-        width: 600px;
-        height: 300px;
+@media (min-width: 500px) and (max-width: 800px){
+
+    .Slider, .Title, .Image, .ControlsContainer{
+        height: 53vh;
     }
 
-    .Image {
-        width: 600px;
-        height: 300px;
+    .Title{
+        font-size: 1.8rem;
     }
 
-    .PrevBtn {
-        top: -260px;
+    .ControlsContainer{
+        grid-template-columns: 6% 1fr 6%;
     }
 
-    .nextBtn {
-        left: 240px;
-        top: -260px;
+    .PrevBtn, .nextBtn{
+        top: 30%;
     }
+
+    .nextBtn{
+        right: 0%;
+    }
+}
+
+@media (min-width: 801px){
+
+    .Slider, .Title, .Image, .ControlsContainer{
+        height: 60vh;
+    }
+
+    .ControlsContainer{
+        grid-template-columns: 6% 1fr 6%;
+    }
+
+    .PrevBtn, .nextBtn{
+        top: 30%;
+    }
+
+    .nextBtn{
+        right: 0%;
+    }
+
 }

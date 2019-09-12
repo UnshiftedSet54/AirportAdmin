@@ -1,24 +1,28 @@
 .NavigationItemRow {
-    margin: 0;
     display: flex;
-    height: 100%;
     width: auto;
     align-items: center;
 }
 
 .NavigationItemRow a {
-    color: black;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
     text-decoration: none;
-    height: 100%;
-    padding: 16px 10px;
-    border-bottom: 4px solid transparent;
+    padding: 14px 10px;
+    transition: background-color 0.2s ease;
+    transition: color 0.2s ease;
 }
 
-.NavigationItemRow a:hover,
+.NavigationItemRow a:hover{
+    background-color: #cccccc85;
+    color: black;
+}
+
 .NavigationItemRow a:active,
 .NavigationItemRow a.active {
-    background-color: #66ccf5;
-    border-bottom: 4px solid #1d8841;
+    background-color: #cccccc85;
     color: black;
 }
 
@@ -33,20 +37,21 @@
 
 .NavigationItemColumn a {
     border-bottom: 4px solid transparent;
-    color: #66ccf5;
+    color: white;
     text-decoration: none;
     margin: auto;
-    height: auto;
-    width: 100%;
-    box-sizing: border-box;
     display: block;
+    padding: 10px 0px;
 }
 
-.NavigationItemColumn a:hover,
+.NavigationItemColumn a:hover {
+    border-bottom: 4px solid white;
+}
+
 .NavigationItemColumn a:active,
 .NavigationItemColumn a.active {
-    color: #413eeb;
-    border-bottom: 4px solid #1d8841;
+    color: #db7500;
+    border-bottom: 4px solid #db7500;
 }
 
 

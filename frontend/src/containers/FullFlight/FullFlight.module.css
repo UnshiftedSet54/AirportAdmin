@@ -1,0 +1,33 @@
+.FullFlight {
+    display: flex;
+    flex-flow: column;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow:scroll;
+    align-items: center;
+    justify-content: center;
+}
+
+.Header {
+    color: white;
+}
+
+.Content {
+    display: flex;
+    width: 85%;
+    height: auto;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.Content img {
+    width: 40%;
+    height: 280px;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+}

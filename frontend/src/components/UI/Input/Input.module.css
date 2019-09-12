@@ -8,6 +8,7 @@
     font-weight: bold;
     float: left;
     margin-bottom: 8px;
+    color: #db7500;
 }
 
 .InputElement {
@@ -32,6 +33,6 @@
 
 @media (min-width: 500px) {
     .Input {
-        width: 325px;
+        width: 100%;
     }
 }

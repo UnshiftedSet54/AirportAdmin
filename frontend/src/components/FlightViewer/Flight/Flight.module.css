@@ -1,0 +1,37 @@
+.Flight {
+    display: flex;
+    padding: 16px 32px;
+    width: 90%;
+    height: 180px;
+    padding: 10px;
+    margin: 10px auto;
+    box-sizing: border-box;
+    border-radius:2px;
+    text-decoration: none;
+    background-color: white;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    -ms-border-radius:2px;
+    -o-border-radius:2px;
+}
+
+.FlightHead {
+    box-sizing: border-box;
+    width: 70%;
+    height: 30px;
+    color: black;
+}
+
+.FlightHead p {
+    height: auto;
+    margin: 16px 10px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.Flight img {
+    width: 30%;
+    height: 100%;
+    box-sizing: border-box;
+}
+

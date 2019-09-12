@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import classes from './Window.module.css';
 import Form from '../../UserAuth/Form/Form';
-
+import Modal from '../Modal/Modal';
 
 class Window extends Component {
     backEndPort = 9000;
@@ -41,6 +41,19 @@ class Window extends Component {
             }
         },
         registerForm: {
+            accountType: {
+                elementType: 'select',
+                elementConfig: {
+                    placeholder: 'Acccount Type',
+                    options: [
+                        { value: 'USER', displayValue: 'User' },
+                        { value: 'ADMIN', displayValue: 'Admin' }
+                    ]
+                },
+                value: 'User',
+                validation: {},
+                valid: false,
+            },
             email: {
                 elementType: 'input',
                 elementConfig: {
@@ -51,7 +64,7 @@ class Window extends Component {
                 validation: {
                     required: true,
                     minLength: 5,
-                    maxLength: 100
+                    maxLength: 40
                 },
                 valid: false,
                 touched: false
@@ -66,7 +79,7 @@ class Window extends Component {
                 validation: {
                     required: true,
                     minLength: 5,
-                    maxLength: 17
+                    maxLength: 30
                 },
                 valid: false,
                 touched: false
@@ -81,7 +94,7 @@ class Window extends Component {
                 validation: {
                     required: true,
                     minLength: 5,
-                    maxLength: 15
+                    maxLength: 17
                 },
                 valid: false,
                 touched: false
@@ -92,11 +105,45 @@ class Window extends Component {
                     type: 'text',
                     placeholder: 'First Name'
                 },
-                validation: {},
-                value: ''
+                validation: {
+                    required: true,
+                    maxLength: 40
+                },
+                value: '',
+                valid: false,
+                touched: false
+            },
+            lastName: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'Last Name*'
+                },
+                validation: {
+                    required: true,
+                    maxLength: 40
+                },
+                value: '',
+                valid: false,
+                touched: false
+            },
+            phone: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: 'Phone Number*'
+                },
+                validation: {
+                    required: true,
+                    maxLength: 20
+                },
+                value: '',
+                valid: false,
+                touched: false
             }
         },
         loading: false,
+        error: null,
         formIsValid: false
     }
 
@@ -104,10 +151,10 @@ class Window extends Component {
         event.preventDefault();
         this.setState({ loading: true });
         const data = {};
-        for ( let key in this.state.loginForm ) {
+        for (let key in this.state.loginForm) {
             data[key] = this.state.loginForm[key].value;
         }
-        this.sendToServer('http://localhost:'+this.backEndPort+'/Airport/Login', 'POST', data);
+        this.sendToServer('/Airport/Login', 'POST', data);
     }
 
     sendRegisterInfo = (event) => {
@@ -117,35 +164,38 @@ class Window extends Component {
         for (let key in this.state.registerForm) {
             data[key] = this.state.registerForm[key].value;
         }
-        this.sendToServer('http://localhost:'+this.backEndPort+'/Airport/Register', 'POST', data)
+        this.sendToServer('/Airport/Register', 'POST', data)
     }
 
     sendToServer = (url, method, data) => {
-        
+
         const formData = new FormData();
-        for(let key in data) {
+        for (let key in data) {
             formData.append(key, data[key]);
         }
         const params = {
-            mode: 'cors',
             method: method,
             body: formData
         }
         fetch(url, params)
-        .then(res => {
-            if( !res.ok ) {
-                throw Error(res.statusText)
-            }
-            return res.text();
-        })
-        .then(data => {
-            this.props.history.push('/');
-            this.props.authenticate();
-            console.log(data);
-        })
-        .catch(error => {
-            console.log(error);
-        })
+            .then(res => {
+                if (!res.ok) {
+                    throw Error(res.statusText)
+                }
+                return res.text();
+            })
+            .then(data => {
+                if (data.startsWith('Incorrect')) {
+                    this.setState({ error: data, loading: false });
+                }
+                else {
+                    this.props.history.push('/');
+                    this.props.authenticate();
+                }
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     checkValidity(value, rules) {
@@ -196,11 +246,18 @@ class Window extends Component {
     }
 
     render() {
+        let errorWindow = null;
+        if (this.state.error) {
+            errorWindow = <Modal show={true} modalClosed={() => {
+                this.setState({ error: null })
+            }}><p style={{color: 'red'}}>{this.state.error}</p></Modal>;
+        }
         return (
             <div className={classes.Window}>
+                {errorWindow}
                 <Switch>
                     <Route
-                        path="/login"
+                        path="/Login"
                         exact
                         render={() =>
                             <Form
@@ -212,7 +269,7 @@ class Window extends Component {
                                 formIsValid={this.state.formIsValid} />
                         } />
                     <Route
-                        path="/register"
+                        path="/Register"
                         exact
                         render={() =>
                             <Form

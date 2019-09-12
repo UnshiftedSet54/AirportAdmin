@@ -1,0 +1,18 @@
+.Flights {
+    display: flex;
+}
+
+.FlightViewer {
+    height: 93%;
+    width: 100%;
+    position: fixed;
+    
+}
+
+@media (min-width: 500px) {
+    .FlightViewer {
+        width: 70%;
+        right: 0;
+    }
+}
+

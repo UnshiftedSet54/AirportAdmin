@@ -1,20 +1,19 @@
 .Window {
-    height: auto;
-    width: auto;
-    box-sizing: border-box;
-    border-radius: 10px;
-    background-color: rgb(185, 255, 144);
-    margin: auto;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(43, 43, 43);
     display: flex;
-    padding: 0 16px;
-    border: 1px solid black;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 2px black;
 }
 
 @media (min-width: 500px) {
     .Window {
+        height: auto;
         width: 400px;
-        margin: 150px auto;
-        border-style: outset;
-        box-shadow: 10px 10px 10px #929191
+        margin: 50px auto;
+        border-radius: 8px;
     }
 }

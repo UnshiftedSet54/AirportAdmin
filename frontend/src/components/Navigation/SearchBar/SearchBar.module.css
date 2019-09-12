@@ -1,15 +1,21 @@
+.SearchBarContainer{
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    padding-right: 15px;
+}
+
 .SearchBar {
     width: 100px;
-    height: 80%;
-    margin: 5px 0;
+    height: 4vh;
+    border: 2px solid black;
     border-radius: 10px;
-    box-sizing: border-box;
-    outline: none;
     text-indent: 1em;
-    transition: 0.3s ease-out;
+    outline: none;
+    transition: width 0.2s linear;
 }
 
 .SearchBar:focus {
-    width: 200px;
+    width: 150px;
 }
 

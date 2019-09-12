@@ -1,7 +1,8 @@
 .Changer {
+    box-shadow: 0.5px 0.5px 0.5px black;
     background-color: white;
-    border: thin solid black;
-    border-radius: 7.5px;
+    border: 1px solid black;
+    border-radius: 15px;
     width: 15px;
     height: 15px;
     transition-duration: 0.3s;
@@ -11,14 +12,5 @@
 
 .Changer:hover,
 .Selected {
-    background-color: lightseagreen;
-}
-
-@media (min-width: 500px) {
-    .Changer {  
-        border-radius: 15px;
-        margin: 0 20px;
-        width: 30px;
-        height: 30px; 
-    }
+    background-color: rgb(51, 51, 51);
 }

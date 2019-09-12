@@ -6,34 +6,36 @@ import Changer from './Changer/Changer';
 
 class Slider extends Component {
   periodicallyChange = null;
-  rootImg = 'http://localhost:8080/';
-  rootClient = 'http://localhost:3000/';
   state = {
     message: '',
     sliderStates: [
       {
-        link: this.rootClient + 'Promotions',
-        image: this.rootImg + 'Airport/Assets/Images/IMG-20190531-WA0000.jpg',
+        link: '/Promotions',
+        image: '/Airport/Assets/Images/autumn-beautiful-color-2734512.jpg',
         isCurrent: true,
-        id: 0
+        id: 0,
+        title: 'Promotions'
       },
       {
-        link: this.rootClient + 'Promotions',
-        image: this.rootImg + 'Airport/Assets/Images/descarga.jpg',
+        link: '/Promotions',
+        image: '/Airport/Assets/Images/4k-wallpaper-bay-beach-1456297.jpg',
         isCurrent: false,
-        id: 1
+        id: 1,
+        title: 'Promotions'
       },
       {
-        link: this.rootClient + 'Explore',
-        image: this.rootImg + 'Airport/Assets/Images/pensum.png',
+        link: '/Explore',
+        image: '/Airport/Assets/Images/adventure-antique-blank-269923.jpg',
         isCurrent: false,
-        id: 2
+        id: 2,
+        title: 'Explore'
       },
       {
-        link: this.rootClient + 'Desierto',
-        image: this.rootImg + 'Airport/Assets/Images/Desert.jpg',
+        link: '/Flights',
+        image: '/Airport/Assets/Images/a380-aircraft-airline-358220.jpg', //aerial-aerial-view-aeroplane-59519.jpg
         isCurrent: false,
-        id: 3
+        id: 3,
+        title: 'Flights'
       }
     ]
   }
@@ -117,11 +119,16 @@ class Slider extends Component {
     ));
     return (
       <div className={classes.Slider}>
-        <a href={this.state.sliderStates[current].link}><img className={classes.Image} src={this.state.sliderStates[current].image} alt="promotion" /></a>
+        <a className={classes.Anchor} href={this.state.sliderStates[current].link}>
+          <div className={classes.Title}>
+            <h1>{this.state.sliderStates[current].title}</h1>
+          </div>
+          <img className={classes.Image} src={this.state.sliderStates[current].image} alt="" />
+        </a>
+        <div className={classes.PrevBtn} onClick={this.prevClickedHandler}> {'<'} </div>
         <div className={classes.Selector}>
           {changers}
         </div>
-        <div className={classes.PrevBtn} onClick={this.prevClickedHandler}> {'<'} </div>
         <div className={classes.nextBtn} onClick={this.nextClickedHandler}> {'>'} </div>
       </div>
     );

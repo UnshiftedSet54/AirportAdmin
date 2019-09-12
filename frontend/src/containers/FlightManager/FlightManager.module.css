@@ -1,0 +1,56 @@
+.FlightManager {
+    position: fixed;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.OptionsContainer {   
+    background-color: #eee;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.OptionsList {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.Option {
+    display: flex;
+    list-style: none;
+    margin: 3px 0;
+    height: 30px;
+    box-shadow: 1px 1px 1px black;
+    border-radius: 10px;
+    width: 100%;
+    background-color: #afafaf;
+    box-sizing: border-box;
+}
+
+.Option a {
+    color: #09026e;
+    margin: auto;
+    width: 100%;
+    text-decoration: none;
+}
+
+.Option a:visited {
+    color: #09026e;
+}
+
+.Option a:hover {
+    font-weight: bolder;
+}
+
+.Content {
+    padding: 0px;
+    width: 75%;
+    box-sizing: border-box;
+}
